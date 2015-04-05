@@ -8,8 +8,16 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        format = {"pretty", "html:target/cucumber"},
-        features = "src/test/features/logIn.feature"
+        features = "src/test/features/logIn.feature", dryRun = false,
+        strict = true,
+        //glue = "com.sample",
+        //tags = { "~@wip", "@executeThis" },
+        monochrome = true,
+        format = {
+                "pretty",
+                "html:target/cucumber",
+                "json:target/result/result.json"
+        }
 )
 public class RunCukesTest {
 }

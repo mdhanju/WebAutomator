@@ -6,6 +6,7 @@ package helpers;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.FileNotFoundException;
@@ -22,7 +23,9 @@ public class parser {
             FileReader reader = new FileReader("config.json");
             JSONParser jsonParser = new JSONParser();
             JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
-            myBrowser = (String) jsonObject.get("browser");
+            JSONArray myBrowsers = (JSONArray) jsonObject.get("browser");
+            // TODO - Parallel browser not yet implemented
+            myBrowser = (String) myBrowsers.get(0);
             System.out.println("Browser = " + myBrowser);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
