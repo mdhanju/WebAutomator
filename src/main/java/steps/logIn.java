@@ -5,6 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import stepHelpers.mdClickElement;
 import stepHelpers.mdGetInnerHTML;
+import stepHelpers.mdWait;
 
 public class logIn {
 
@@ -53,6 +54,9 @@ public class logIn {
     public void i_am_on_google_search_page() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
+
+        mdClickElement.findByLinkText("+You");
+        mdWait.waitFor(5);
         System.out.println("Step -- I am on google search page");
     }
 
