@@ -3,19 +3,22 @@ package steps; /**
  */
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import stepHelpers.clickElement;
+import stepHelpers.getInnerHTML;
+import stepHelpers.mdWait;
+
+import static stepHelpers.clickElement.*;
 
 public class logIn {
 
-
     @Given("^I am on Log In page$")
     public void i_am_on_Log_In_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-//        throw new PendingException();
 
-
+//        mdWait.waitFor(1);
+        String onee = getInnerHTML.findByClass("gb_l");
+        clickElement.clickByClass("gb_l");
+        System.out.println("---- onee---- " + onee);
+//        mdWait.waitFor(1);
         System.out.println("---- Log  In Page ----");
 
     }
@@ -32,5 +35,11 @@ public class logIn {
         // Write code here that turns the phrase above into concrete actions
 //        throw new PendingException();
         System.out.println("Password");
+    }
+
+    @Then("^I see copyright message$")
+    public void i_see_copyright_message() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
     }
 }

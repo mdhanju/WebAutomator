@@ -2,6 +2,8 @@ package helpers;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,7 +15,7 @@ import org.openqa.selenium.safari.SafariDriver;
  */
 
 public class browserHelper {
-    private static WebDriver driver;
+    public static WebDriver driver;
 
     String myBrowser = parser.getBrowser();
     String myUrl = parser.getUrl();

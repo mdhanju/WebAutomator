@@ -1,0 +1,41 @@
+{
+  "name": "logIn",
+  "elements": [
+    {
+      "name": "userId",
+      "type": "edit_box",
+      "id": "some_value",
+      "class": "some_value",
+      "xpath": "some_value",
+      "html": "some_value",
+      "customAttribute": {
+        "name": "some_value",
+        "value": "some_value"
+      }
+    },
+    {
+      "name": "password",
+      "type": "edit_box",
+      "id": "some_value",
+      "class": "some_value",
+      "xpath": "some_value",
+      "html": "some_value",
+      "customAttribute": {
+        "name": "some_value",
+        "value": "some_value"
+      }
+    },
+    {
+      "name": "signIn",
+      "type": "button",
+      "id": "some_value",
+      "class": "some_value",
+      "xpath": "some_value",
+      "html": "some_value",
+      "customAttribute": {
+        "name": "some_value",
+        "value": "some_value"
+      }
+    }
+  ]
+}

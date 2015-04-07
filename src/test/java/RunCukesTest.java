@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/features/logIn.feature", dryRun = false,
-        strict = true,
+        features = "src/test/features/",
         //glue = "com.sample",
         //tags = { "~@wip", "@executeThis" },
         monochrome = true,
