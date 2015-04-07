@@ -1,0 +1,78 @@
+{
+  "name": "logIn",
+  "elements": [
+    {
+      "name": "textOneAccountAllOfGoogle",
+      "type": "h1",
+      "xpath": "/html/body/div/div[2]/div[1]/h1",
+      "html": "One account. All of Google."
+    },
+    {
+      "name": "textSignInToContinueToGmail",
+      "type": "h2",
+      "class": "hidden-small",
+      "xpath": "/html/body/div/div[2]/div[1]/h2",
+      "html": "Sign in to continue to Gmail"
+    },
+    {
+      "name": "labelEmail",
+      "type": "label",
+      "class": "hidden-label",
+      "html": "Email",
+      "customAttribute": {
+        "name": "for",
+        "value": "Email"
+      }
+    },
+    {
+      "name": "labelPassword",
+      "type": "label",
+      "class": "hidden-label",
+      "html": "Password",
+      "customAttribute": {
+        "name": "for",
+        "value": "Passwd"
+      }
+    },
+    {
+      "name": "editboxEmail",
+      "type": "input",
+      "id": "Email",
+      "customAttribute": {
+        "name": "placeholder",
+        "value": "Email"
+      }
+    },
+    {
+      "name": "editboxPassword",
+      "type": "input",
+      "id": "Passwd",
+      "customAttribute": {
+        "name": "placeholder",
+        "value": "Password"
+      }
+    },
+    {
+      "name": "buttonSignIn",
+      "type": "input",
+      "id": "signIn",
+      "class": "rc-button rc-button-submit",
+      "customAttribute": {
+        "name": "value",
+        "value": "Sign in"
+      }
+    },
+    {
+      "name": "checkboxStaySignedIn",
+      "type": "checkbox",
+      "id": "PersistentCookie"
+    },
+    {
+      "name": "labelStaySignedIn",
+      "type": "span",
+      "cssPath": "#gaia_loginform > label.remember > span",
+      "xpath": "//*[@id='gaia_loginform']/label[3]/span",
+      "html": "Stay signed in"
+    }
+  ]
+}

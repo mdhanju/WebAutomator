@@ -1,0 +1,41 @@
+{
+  "name": "searchPage",
+  "elements": [
+    {
+      "name": "searchImage",
+      "type": "img",
+      "id": "hplogo",
+      "customAttribute": {
+        "name": "src",
+        "value": "/images/srpr/logo11w.png"
+      }
+    },
+    {
+      "name": "searchBox",
+      "type": "input",
+      "id": "lst-ib",
+      "class": "gsfi",
+      "customAttribute": {
+        "name": "title",
+        "value": "Search"
+      }
+    },
+    {
+      "name": "googleSearchButton",
+      "type": "input",
+      "customAttribute": {
+        "name": "aria-label",
+        "value": "Google Search"
+      }
+    },
+    {
+      "name": "imFeelingLuckyButton",
+      "id": "gbqfbb",
+      "type": "input",
+      "customAttribute": {
+        "name": "aria-label",
+        "value": "I'm Feeling Lucky"
+      }
+    }
+  ]
+}
