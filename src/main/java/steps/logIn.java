@@ -3,11 +3,8 @@ package steps; /**
  */
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import stepHelpers.clickElement;
-import stepHelpers.getInnerHTML;
-import stepHelpers.mdWait;
-
-import static stepHelpers.clickElement.*;
+import stepHelpers.mdClickElement;
+import stepHelpers.mdGetInnerHTML;
 
 public class logIn {
 
@@ -15,8 +12,8 @@ public class logIn {
     public void i_am_on_Log_In_page() throws Throwable {
 
 //        mdWait.waitFor(1);
-        String onee = getInnerHTML.findByClass("gb_l");
-        clickElement.clickByClass("gb_l");
+        String onee = mdGetInnerHTML.findByClass("gb_l");
+        mdClickElement.clickByClass("gb_l");
         System.out.println("---- onee---- " + onee);
 //        mdWait.waitFor(1);
         System.out.println("---- Log  In Page ----");

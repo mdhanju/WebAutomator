@@ -2,23 +2,20 @@ package helpers;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.safari.SafariDriver;
+import parser.mdParser;
 
 /**
  * Created by maninderdhanju on 4/5/15.
  */
 
-public class browserHelper {
+public class mdBrowserHelper {
     public static WebDriver driver;
 
-    String myBrowser = parser.getBrowser();
-    String myUrl = parser.getUrl();
+    String myBrowser = mdParser.getBrowser();
+    String myUrl = mdParser.getUrl();
 
     @Before
     public void launchBrowser() throws Exception {
