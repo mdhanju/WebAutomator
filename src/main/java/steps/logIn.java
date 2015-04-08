@@ -56,7 +56,7 @@ public class logIn {
 //        throw new PendingException();
 
         mdClickElement.findByLinkText("+You");
-        mdWait.waitFor(5);
+//        mdWait.waitFor(5);
         System.out.println("Step -- I am on google search page");
     }
 
