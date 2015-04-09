@@ -22,9 +22,9 @@ public class mdMainRouter {
 
 
         if (type.equals("see")) {
-            System.out.println(type + " ASSERTION is detected");
+            mdAssertRouter assertRouter = new mdAssertRouter(name, type);
         } else if (type.equals("click")) {
-            System.out.println(type + " ACTION is detected");
+            mdActionRouter actionRouter = new mdActionRouter(name, type);
         } else {
             System.out.println(" NOTHING  is detected");
         }

@@ -1,1 +1,33 @@
-{}
+{
+  "name": "searchPage",
+  "elements": [
+    {
+      "name": "linkYou",
+      "label": "+You"
+    },
+    {
+      "name": "linkGmail",
+      "label": "Gmail"
+    },
+    {
+      "name": "linkImages",
+      "label": "Images"
+    },
+    {
+      "name": "iconApps",
+      "href": "http://www.google.com/intl/en/options/"
+    },
+    {
+      "name": "searchBox",
+      "title": "Search"
+    },
+    {
+      "name": "buttonGoogleSearch",
+      "value": "Google Search"
+    },
+    {
+      "name": "imFeelingLuckyButton",
+      "value": "I'm Feeling Lucky"
+    }
+  ]
+}

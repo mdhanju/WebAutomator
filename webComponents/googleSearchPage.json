@@ -2,9 +2,40 @@
   "name": "searchPage",
   "elements": [
     {
+      "name": "linkYou",
+      "type": "a",
+      "customAttribute": {
+        "name": "href",
+        "value": "https://plus.google.com/?gpsrc=ogpy0&amp;tab=wX"
+      }
+    },
+    {
+      "name": "linkGmail",
+      "type": "a",
+      "customAttribute": {
+        "name": "html",
+        "value": "Gmail"
+      }
+    },
+    {
+      "name": "linkImages",
+      "type": "img",
+      "customAttribute": {
+        "name": "label",
+        "value": "Images"
+      }
+    },
+    {
+      "name": "iconApps",
+      "type": "a",
+      "customAttribute": {
+        "name": "href",
+        "value": "http://www.google.com/intl/en/options/"
+      }
+    },
+    {
       "name": "searchImage",
       "type": "img",
-      "id": "hplogo",
       "customAttribute": {
         "name": "src",
         "value": "/images/srpr/logo11w.png"
@@ -13,15 +44,13 @@
     {
       "name": "searchBox",
       "type": "input",
-      "id": "lst-ib",
-      "class": "gsfi",
       "customAttribute": {
-        "name": "title",
+        "name": "aria-label",
         "value": "Search"
       }
     },
     {
-      "name": "googleSearchButton",
+      "name": "buttonGoogleSearch",
       "type": "input",
       "customAttribute": {
         "name": "aria-label",
@@ -30,7 +59,6 @@
     },
     {
       "name": "imFeelingLuckyButton",
-      "id": "gbqfbb",
       "type": "input",
       "customAttribute": {
         "name": "aria-label",

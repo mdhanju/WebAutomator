@@ -4,6 +4,8 @@ Feature: Google search page
     Given I am on google search page
     And I "see" "linkYou"
     And I "see" "linkGmail"
+    And I "see" "linkImages"
+    And I "see" "iconApps"
     And I "see" "searchImage"
     And I "see" "searchBox"
     And I "see" "buttonGoogleSearch"

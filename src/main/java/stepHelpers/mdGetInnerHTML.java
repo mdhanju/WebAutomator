@@ -43,4 +43,9 @@ public class mdGetInnerHTML {
         return mdBrowserHelper.driver.findElement(By.linkText(key)).getAttribute("innerHTML");
     }
 
+    //Find element by Link Text to get inner html
+    public static String findByCustomAttr(String key) {
+        return mdBrowserHelper.driver.findElement(By.cssSelector(key)).getAttribute("value");
+    }
+
 }

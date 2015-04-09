@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-public class mdParser {
+public class mdConfigParser {
     static String path = "config.json";
 
     static public String getBrowser() {

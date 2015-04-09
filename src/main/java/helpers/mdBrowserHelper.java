@@ -5,7 +5,7 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import parser.mdParser;
+import parser.mdConfigParser;
 
 /**
  * Created by maninderdhanju on 4/5/15.
@@ -14,8 +14,8 @@ import parser.mdParser;
 public class mdBrowserHelper {
     public static WebDriver driver;
 
-    String myBrowser = mdParser.getBrowser();
-    String myUrl = mdParser.getUrl();
+    String myBrowser = mdConfigParser.getBrowser();
+    String myUrl = mdConfigParser.getUrl();
 
     @Before
     public void launchBrowser() throws Exception {
