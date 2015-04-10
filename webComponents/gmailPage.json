@@ -1,0 +1,22 @@
+{
+  "name": "gmailPage",
+  "url": "http://www.yahoo.com",
+  "elements": [
+    {
+      "name": "signInButton",
+      "type": "a",
+      "customAttribute": {
+        "name": "innerHTML",
+        "value": "Sign in"
+      }
+    },
+    {
+      "name": "createAnAccountButton",
+      "type": "a",
+      "customAttribute": {
+        "name": "innerHTML",
+        "value": "Create an account"
+      }
+    }
+  ]
+}

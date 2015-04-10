@@ -5,9 +5,9 @@ package mdRouter;
  */
 public class mdActionRouter {
     public mdActionRouter(String name, String action) {
-        System.out.println("*******************************************");
-        System.out.println("Name is Web Component = " + name);
-        System.out.println("Action = " + action);
-        System.out.println("*******************************************");
+//        System.out.println("*******************************************");
+//        System.out.println("Name is Web Component = " + name);
+//        System.out.println("Action = " + action);
+//        System.out.println("*******************************************");
     }
 }

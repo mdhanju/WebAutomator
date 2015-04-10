@@ -1,13 +1,12 @@
 Feature: Google search page
 
-  Scenario: User on google main page
-    Given I am on google search page
-    And I "see" "linkYou"
-    And I "see" "linkGmail"
-    And I "see" "linkImages"
-    And I "see" "iconApps"
-    And I "see" "searchImage"
-    And I "see" "searchBox"
-    And I "see" "buttonGoogleSearch"
-    And I "see" "buttonImFeelingLucky"
-    And I "click" "linkYou"
+  Scenario: Validate googleSearchPage
+    Given I am on googleSearchPage
+    And I see "linkYou"
+    And I see "linkGmail"
+    And I click "linkYou"
+
+  Scenario: Validate gmailPage
+    Given I am on gmailPage
+    Then I see "signInButton"
+    And I see "createAnAccountButton"

@@ -14,8 +14,34 @@ import java.io.IOException;
  */
 public class mdWebComponentParser {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParseException {
+        String rawData = getNameOfWebComp("Validate gmailPage");
+        String getUrl = getUrl(rawData);
         String dataa = getdata("linkYou");
+    }
+
+
+    public static String getNameOfWebComp(String data) {
+        String result = null;
+        String[] nameArray = data.split(" ");
+        for (int i = 0; i < nameArray.length; i++) {
+            if (nameArray[i].contains("Page")) {
+                result = nameArray[i] + ".json";
+            }
+        }
+        return result;
+    }
+
+    public static String getUrl(String data) throws IOException, ParseException {
+        String result = null;
+        String path = "webComponents/" + data;
+        System.out.println("path = " + path);
+        FileReader reader = new FileReader(path);
+        JSONParser jsonParser = new JSONParser();
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+        String launchUrl = (String) jsonObject.get("url");
+        System.out.println("launchUrl = " + launchUrl);
+        return launchUrl;
     }
 
     public static String getdata(String name) {
@@ -32,17 +58,11 @@ public class mdWebComponentParser {
             for (int i = 0; i < allElements.size(); i++) {
                 JSONObject eachElement = (JSONObject) allElements.get(i);
                 String elementName = (String) eachElement.get("name");
-
 //                System.out.println("Elements eachElement = "+ eachElement);
-
                 if (elementName.equals(name)) {
                     String elementType = (String) eachElement.get("type");
                     JSONObject elementobj = (JSONObject) eachElement.get("customAttribute");
-                    String attName = (String) elementobj.get("name");
-                    String attValue = (String) elementobj.get("value");
-
-                    String key = " [" + attName + ":" + "\"" + attValue + "\"" + "]";
-                    System.out.println("Elements Type = " + elementType + key);
+                    System.out.println("Element's Custom Attribute = " + elementobj);
                 }
             }
 

@@ -1,12 +1,13 @@
 {
-  "name": "searchPage",
+  "name": "googleSearchPage",
+  "url": "http://www.google.com",
   "elements": [
     {
       "name": "linkYou",
       "type": "a",
       "customAttribute": {
-        "name": "href",
-        "value": "https://plus.google.com/?gpsrc=ogpy0&amp;tab=wX"
+        "name": "html",
+        "value": "+You"
       }
     },
     {
@@ -19,7 +20,7 @@
     },
     {
       "name": "linkImages",
-      "type": "img",
+      "type": "a",
       "customAttribute": {
         "name": "label",
         "value": "Images"
