@@ -1,0 +1,23 @@
+{
+  "name": "yahooPage",
+  "url": "http://www.yahoo.com",
+  "title": "Yahoo",
+  "elements": [
+    {
+      "name": "searchWebButton",
+      "type": "button",
+      "customAttribute": {
+        "name": "innerHTML",
+        "value": "Search Web"
+      }
+    },
+    {
+      "name": "uhSearchBoxInput",
+      "type": "input",
+      "customAttribute": {
+        "name": "id",
+        "value": "UH-SearchBox"
+      }
+    }
+  ]
+}

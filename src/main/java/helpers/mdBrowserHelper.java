@@ -9,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import parser.mdConfigParser;
 import cucumber.api.Scenario;
 import parser.mdWebComponentParser;
-import stepHelpers.mdWait;
 
 import java.io.IOException;
 
@@ -41,7 +40,8 @@ public class mdBrowserHelper {
     }
 
     public void setDriver(String myBrowser, String myUrl) {
-
+        System.out.println("BROWSER = " + myBrowser.toUpperCase());
+        System.out.println("URL = " + myUrl);
         if (myBrowser.equals("chrome")) {
             driver = new ChromeDriver();
         } else if (myBrowser.equals("firefox")) {
@@ -50,6 +50,11 @@ public class mdBrowserHelper {
             driver = new ChromeDriver();
         }
         driver.get(myUrl);
-        mdWait.waitFor(2);
+//        mdWait.waitFor(1);
+    }
+
+    public String getPageTitle() {
+        String myTitle = driver.getTitle();
+        return myTitle;
     }
 }

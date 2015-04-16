@@ -1,33 +1,34 @@
 {
   "name": "googleSearchPage",
   "url": "http://www.google.com",
+  "title": "Google",
   "elements": [
     {
-      "name": "linkYou",
+      "name": "youLink",
       "type": "a",
       "customAttribute": {
-        "name": "html",
+        "name": "linkText",
         "value": "+You"
       }
     },
     {
-      "name": "linkGmail",
+      "name": "gmailLink",
       "type": "a",
       "customAttribute": {
-        "name": "html",
+        "name": "linkText",
         "value": "Gmail"
       }
     },
     {
-      "name": "linkImages",
+      "name": "imagesLink",
       "type": "a",
       "customAttribute": {
-        "name": "label",
+        "name": "linkText",
         "value": "Images"
       }
     },
     {
-      "name": "iconApps",
+      "name": "appsSign",
       "type": "a",
       "customAttribute": {
         "name": "href",
@@ -35,19 +36,35 @@
       }
     },
     {
+      "name": "signInButton",
+      "type": "a",
+      "customAttribute": {
+        "name": "linkText",
+        "value": "Sign in"
+      }
+    },
+    {
       "name": "searchImage",
       "type": "img",
       "customAttribute": {
-        "name": "src",
-        "value": "/images/srpr/logo11w.png"
+        "name": "id",
+        "value": "hplogo"
       }
     },
     {
       "name": "searchBox",
       "type": "input",
       "customAttribute": {
-        "name": "aria-label",
-        "value": "Search"
+        "name": "id",
+        "value": "lst-ib"
+      }
+    },
+    {
+      "name": "mikeIcon",
+      "type": "input",
+      "customAttribute": {
+        "name": "id",
+        "value": "gsri_ok0"
       }
     },
     {

@@ -1,35 +1,35 @@
 package steps;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import helpers.mdBrowserHelper;
-import mdRouter.mdMainRouter;
+import mdRouter.mdActionRouter;
+import mdRouter.mdAssertRouter;
 
 /**
  * Created by maninderdhanju on 4/7/15.
  */
 public class mdSteps {
 
-    @Given("^I am on googleSearchPage$")
-    public void i_am_on_googleSearchPage() throws Throwable {
+    @Given("^I am on \"(.*?)\"$")
+    public void i_am_on(String arg1) throws Throwable {
         String myFileName = mdBrowserHelper.fileName;
-        System.out.println(" Web Component File Name in step === " + myFileName);
-    }
-
-    @Given("^I click \"(.*?)\"$")
-    public void i_click(String arg1) throws Throwable {
-        String myFileName = mdBrowserHelper.fileName;
-        System.out.println(" Web Component File Name in step === " + myFileName);
-    }
-
-    @Given("^I am on gmailPage$")
-    public void i_am_on_gmailPage() throws Throwable {
-        String myFileName = mdBrowserHelper.fileName;
-        System.out.println(" Web Component File Name in step === " + myFileName);
+        mdAssertRouter assertRouter = new mdAssertRouter(myFileName);
+        assertRouter.assertPages(arg1);
     }
 
     @Given("^I see \"(.*?)\"$")
     public void i_see(String arg1) throws Throwable {
         String myFileName = mdBrowserHelper.fileName;
-        System.out.println(" Web Component File Name in step === " + myFileName);
+        mdAssertRouter assertRouter = new mdAssertRouter(myFileName);
+        assertRouter.assertElements(arg1);
     }
+
+    @Given("^I click \"(.*?)\"$")
+    public void i_click(String arg1) throws Throwable {
+        String myFileName = mdBrowserHelper.fileName;
+        mdActionRouter actionRouter = new mdActionRouter(myFileName);
+        actionRouter.clickElement(arg1);
+    }
+
 }

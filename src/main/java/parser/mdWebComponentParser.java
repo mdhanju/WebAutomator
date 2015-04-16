@@ -14,67 +14,57 @@ import java.io.IOException;
  */
 public class mdWebComponentParser {
 
-    public static void main(String[] args) throws IOException, ParseException {
-        String rawData = getNameOfWebComp("Validate gmailPage");
-        String getUrl = getUrl(rawData);
-        String dataa = getdata("linkYou");
-    }
-
+//    public static void main(String[] args) throws IOException, ParseException {
+//        String dataa = getPageTitle("i_am_on_gmailPage");
+//        System.out.println("dataa = " + dataa);
+//    }
 
     public static String getNameOfWebComp(String data) {
         String result = null;
         String[] nameArray = data.split(" ");
         for (int i = 0; i < nameArray.length; i++) {
             if (nameArray[i].contains("Page")) {
-                result = nameArray[i] + ".json";
+                result = nameArray[i];
             }
         }
         return result;
     }
 
     public static String getUrl(String data) throws IOException, ParseException {
-        String result = null;
-        String path = "webComponents/" + data;
-        System.out.println("path = " + path);
+        String launchUrl = null;
+        String path = "webComponents/" + data + ".json";
         FileReader reader = new FileReader(path);
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
-        String launchUrl = (String) jsonObject.get("url");
-        System.out.println("launchUrl = " + launchUrl);
+        launchUrl = (String) jsonObject.get("url");
         return launchUrl;
     }
 
-    public static String getdata(String name) {
-        String myBrowser = null;
-        String path = "webComponents/googleSearchPage.json";
-        try {
-            // read the json file
-            FileReader reader = new FileReader(path);
-            JSONParser jsonParser = new JSONParser();
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
-            JSONArray allElements = (JSONArray) jsonObject.get("elements");
+    public static JSONObject getCustomAttFrmWebComp(String fileName, String eleName) throws IOException, ParseException {
+        JSONObject result = null;
+        String path = "webComponents/" + fileName + ".json";
 
+        FileReader reader = new FileReader(path);
+        JSONParser jsonParser = new JSONParser();
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 
-            for (int i = 0; i < allElements.size(); i++) {
-                JSONObject eachElement = (JSONObject) allElements.get(i);
-                String elementName = (String) eachElement.get("name");
-//                System.out.println("Elements eachElement = "+ eachElement);
-                if (elementName.equals(name)) {
-                    String elementType = (String) eachElement.get("type");
-                    JSONObject elementobj = (JSONObject) eachElement.get("customAttribute");
-                    System.out.println("Element's Custom Attribute = " + elementobj);
-                }
-            }
-
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } catch (ParseException ex) {
-            ex.printStackTrace();
-        } catch (NullPointerException ex) {
-            ex.printStackTrace();
+        JSONArray arrayElements = (JSONArray) jsonObject.get("elements");
+        for (int i = 0; i < arrayElements.size(); i++) {
+            JSONObject elementObj = (JSONObject) arrayElements.get(i);
+            if (elementObj.get("name").equals(eleName)) result = (JSONObject) elementObj.get("customAttribute");
         }
-        return myBrowser;
+        return result;
+    }
+
+    public static String getPageTitle(String data) throws IOException, ParseException {
+        String pageTitle = null;
+        String[] myArray = data.split("_");
+        String nameFile = myArray[myArray.length - 1];
+        String path = "webComponents/" + nameFile + ".json";
+        FileReader reader = new FileReader(path);
+        JSONParser jsonParser = new JSONParser();
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
+        pageTitle = (String) jsonObject.get("title");
+        return pageTitle;
     }
 }

@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/features/mdGoogleSearchPage.feature",
-//        features = "src/test/features/googleSearchPage.feature",
+        features = "src/test/features/",
         glue = {"steps",
                 "helpers"},
         //tags = { "~@wip", "@executeThis" },
@@ -17,7 +16,7 @@ import org.junit.runner.RunWith;
         format = {
                 "pretty",
                 "html:target/cucumber",
-                "json:target_json/result.json"
+                "json:target/json/result.json"
         }
 )
 public class RunCukesTest {

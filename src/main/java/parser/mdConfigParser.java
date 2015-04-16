@@ -28,7 +28,7 @@ public class mdConfigParser {
             JSONArray myBrowsers = (JSONArray) jsonObject.get("browser");
             // TODO - Parallel browser not yet implemented
             myBrowser = (String) myBrowsers.get(0);
-            System.out.println("Browser = " + myBrowser);
+//            System.out.println("Browser = " + myBrowser);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {

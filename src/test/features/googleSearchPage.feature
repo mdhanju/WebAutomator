@@ -1,21 +1,9 @@
 Feature: Google search page
 
-  Scenario: User is  on googleSearchPage
-    Given I am on google search page
-    And I see "searchImage"
-    And I see "searchBox"
-    And I see "buttonGoogleSearch"
-    And I see "buttonImFeelingLucky"
-
-
-  Scenario: User log in to gmailPage
-    Given I am on Log In page for gmail
-    Then I see "textOneAccountAllOfGoogle"
-    And I see "textSignInToContinueToGmail"
-    And I see "labelEmail"
-    And I see "labelPassword"
-    And I see "editboxEmail"
-    And I see "editboxPassword"
-    And I see "buttonSignIn"
-    And I see "checkboxStaySignedIn"
-    And I see "labelStaySignedIn"
+  Scenario: Validate googleSearchPage
+    Given I am on "googleSearchPage"
+    And I see "youLink"
+    And I see "gmailLink"
+    And I see "imagesLink"
+    When I click "gmailLink"
+    Then I am on "gmailPage"
