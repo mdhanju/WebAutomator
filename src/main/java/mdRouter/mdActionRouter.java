@@ -4,6 +4,7 @@ import helpers.mdBrowserHelper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import stepHelpers.mdClickElement;
+import stepHelpers.mdInputText;
 
 import java.io.IOException;
 
@@ -25,9 +26,25 @@ public class mdActionRouter {
         JSONObject dataa = getCustomAttFrmWebComp(fileName, name);
         String nameTrigger = (String) dataa.get("name");
         String valueTrigger = (String) dataa.get("value");
-        System.out.println("Element Attributes--> " + nameTrigger + " : " + valueTrigger);
+//        System.out.println("Element Attributes--> " + nameTrigger + " : " + valueTrigger);
         if (nameTrigger.equals("linkText")) {
             mdClickElement.findByLinkText(valueTrigger);
+        } else if (nameTrigger.equals("id")) {
+            mdClickElement.clickById(valueTrigger);
+        } else {
+            System.out.println("NEED TO BE IMPLEMENTED");
+        }
+    }
+
+    public void inputTextInElement(String name, String action) throws IOException, ParseException {
+        mdBrowserHelper myhelper = new mdBrowserHelper();
+        String myPage = myhelper.getPageTitle();
+        JSONObject dataa = getCustomAttFrmWebComp(fileName, name);
+        String nameTrigger = (String) dataa.get("name");
+        String valueTrigger = (String) dataa.get("value");
+//        System.out.println("Element Attributes--> " + nameTrigger + " : " + valueTrigger);
+        if (nameTrigger.equals("id")) {
+            mdInputText.inputById(valueTrigger, action);
         }
     }
 

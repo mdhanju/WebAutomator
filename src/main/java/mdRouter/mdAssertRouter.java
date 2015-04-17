@@ -28,8 +28,8 @@ public class mdAssertRouter {
         mdBrowserHelper myhelper;
         myhelper = new mdBrowserHelper();
         String pageTitleWeb = myhelper.getPageTitle();
-        System.out.println("Page title Web = " + pageTitleWeb);
-        System.out.println("Page Title Data = " + pageTitleData);
+//        System.out.println("Page title Web = " + pageTitleWeb);
+//        System.out.println("Page Title Data = " + pageTitleData);
 
         if ((pageTitleWeb.contains(pageTitleData)) && (pageTitleData != null) && (pageTitleData.length() > 1))
             res = true;
@@ -42,7 +42,7 @@ public class mdAssertRouter {
         JSONObject dataa = getCustomAttFrmWebComp(fileName, name);
         String nameTrigger = (String) dataa.get("name");
         String valueTrigger = (String) dataa.get("value");
-        System.out.println("Element Attributes--> " + nameTrigger + " : " + valueTrigger);
+//        System.out.println("Element Attributes--> " + nameTrigger + " : " + valueTrigger);
         if (nameTrigger.equals("linkText")) {
 //            System.out.println(nameTrigger + " = " +valueTrigger);
             Boolean currentDispay = mdCheckDisplay.findByLinkText(valueTrigger);

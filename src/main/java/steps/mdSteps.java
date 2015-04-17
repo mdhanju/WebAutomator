@@ -32,4 +32,13 @@ public class mdSteps {
         actionRouter.clickElement(arg1);
     }
 
+    @Then("^I input \"(.*?)\" in \"(.*?)\"$")
+    public void i_input_in(String arg1, String arg2) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
+        String myFileName = mdBrowserHelper.fileName;
+        mdActionRouter actionRouter = new mdActionRouter(myFileName);
+        actionRouter.inputTextInElement(arg2, arg1);
+    }
+
 }

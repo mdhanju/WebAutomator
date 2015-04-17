@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 public class mdClickElement {
 
     //Find element by Id to get inner html
-    public void clickById(String key) {
+    public static void clickById(String key) {
         mdBrowserHelper.driver.findElement(By.id(key)).click();
     }
 
