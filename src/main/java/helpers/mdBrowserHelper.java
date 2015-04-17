@@ -1,5 +1,6 @@
 package helpers;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.json.simple.parser.ParseException;
@@ -7,8 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import parser.mdConfigParser;
-import cucumber.api.Scenario;
-import parser.mdWebComponentParser;
+import parser.mdWebElementParser;
 
 import java.io.IOException;
 
@@ -26,9 +26,10 @@ public class mdBrowserHelper {
     @Before
     public void before(Scenario scenario) throws IOException, ParseException {
         String scenarioName = scenario.getName();
+        setFileName(scenarioName);
         System.out.println("Scenario Name = " + scenarioName);
-        fileName = mdWebComponentParser.getNameOfWebComp(scenarioName);
-        myUrl = mdWebComponentParser.getUrl(fileName);
+        fileName = mdWebElementParser.getNameOfWebComp(scenarioName);
+        myUrl = mdWebElementParser.getUrl(fileName);
         System.out.println("**** Launching Browser ****");
         setDriver(myBrowser, myUrl);
     }
@@ -49,12 +50,22 @@ public class mdBrowserHelper {
         } else {
             driver = new ChromeDriver();
         }
+//        driver.manage().window().maximize();
         driver.get(myUrl);
-//        mdWait.waitFor(1);
     }
 
     public String getPageTitle() {
         String myTitle = driver.getTitle();
         return myTitle;
     }
+
+
+    public static String getFileName() {
+        return fileName;
+    }
+
+    public static void setFileName(String name) {
+        fileName = name;
+    }
+
 }

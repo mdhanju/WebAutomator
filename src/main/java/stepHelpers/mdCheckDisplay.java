@@ -8,24 +8,31 @@ import org.openqa.selenium.By;
  */
 public class mdCheckDisplay {
 
-    public Boolean findById(String key) {
+    public static Boolean findById(String key) {
         Boolean res = null;
-        String isDisplay = mdBrowserHelper.driver.findElement(By.id(key)).getCssValue("display");
-        if (isDisplay.contains("block")) res = true;
+        String isDisplay = mdBrowserHelper.driver.findElement(By.id(key)).getCssValue("visibility");
+        if (isDisplay.contains("visible")) res = true;
         return res;
     }
 
-    public Boolean findByClass(String key) {
+    public static Boolean findByClass(String key) {
         Boolean res = null;
-        String isDisplay = mdBrowserHelper.driver.findElement(By.className(key)).getCssValue("display");
-        if (isDisplay.contains("block")) res = true;
+        String isDisplay = mdBrowserHelper.driver.findElement(By.className(key)).getCssValue("visibility");
+        if (isDisplay.contains("visible")) res = true;
         return res;
     }
 
     public static Boolean findByLinkText(String key) {
         Boolean res = null;
-        String isDisplay = mdBrowserHelper.driver.findElement(By.linkText(key)).getCssValue("display");
-        if (isDisplay.contains("block")) res = true;
+        String isDisplay = mdBrowserHelper.driver.findElement(By.linkText(key)).getCssValue("visibility");
+        if (isDisplay.contains("visible")) res = true;
+        return res;
+    }
+
+    public static Boolean findByXPath(String key) {
+        Boolean res = null;
+        String isDisplay = mdBrowserHelper.driver.findElement(By.xpath(key)).getCssValue("visibility");
+        if (isDisplay.contains("visible")) res = true;
         return res;
     }
 }

@@ -1,0 +1,48 @@
+{
+  "name": "gmailInboxPage",
+  "url": "http://www.gmail.com",
+  "title": "Inbox",
+  "elements": [
+    {
+      "name": "signOutImage",
+      "type": "div",
+      "customAttribute": {
+        "name": "xpath",
+        "value1": "//*[@id='gb']/div[1]/div[1]/div[2]/div[5]/div[1]/a/span",
+        "value": "//*[@id='gb']/div[1]/div[1]/div/div[3]/div[1]/a"
+      }
+    },
+    {
+      "name": "signOutButton",
+      "type": "a",
+      "customAttribute": {
+        "name": "linkText",
+        "value": "Sign out"
+      }
+    },
+    {
+      "name": "signInButton",
+      "type": "input",
+      "customAttribute": {
+        "name": "id",
+        "value": "signIn"
+      }
+    },
+    {
+      "name": "staySignInCheckBox",
+      "type": "input",
+      "customAttribute": {
+        "name": "id",
+        "value": "PersistentCookie"
+      }
+    },
+    {
+      "name": "needHelpLink",
+      "type": "a",
+      "customAttribute": {
+        "name": "id",
+        "value": "link-forgot-passwd"
+      }
+    }
+  ]
+}

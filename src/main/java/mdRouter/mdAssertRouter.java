@@ -4,12 +4,12 @@ import helpers.mdBrowserHelper;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.junit.Assert;
-import parser.mdWebComponentParser;
+import parser.mdWebElementParser;
 import stepHelpers.mdCheckDisplay;
 
 import java.io.IOException;
 
-import static parser.mdWebComponentParser.getCustomAttFrmWebComp;
+import static parser.mdWebElementParser.getCustomAttFrmWebComp;
 
 /**
  * Created by maninderdhanju on 4/7/15.
@@ -22,7 +22,7 @@ public class mdAssertRouter {
     }
 
     public void assertPages(String pageTitle) throws IOException, ParseException {
-        String pageTitleData = mdWebComponentParser.getPageTitle(pageTitle);
+        String pageTitleData = mdWebElementParser.getPageTitle(pageTitle);
 
         Boolean res = null;
         mdBrowserHelper myhelper;
@@ -46,6 +46,24 @@ public class mdAssertRouter {
         if (nameTrigger.equals("linkText")) {
 //            System.out.println(nameTrigger + " = " +valueTrigger);
             Boolean currentDispay = mdCheckDisplay.findByLinkText(valueTrigger);
+            Assert.assertTrue(currentDispay);
+        }
+        if (nameTrigger.equals("id")) {
+//            System.out.println(nameTrigger + " = " +valueTrigger);
+            Boolean currentDispay = mdCheckDisplay.findById(valueTrigger);
+            System.out.println("currentDispay = " + currentDispay);
+            Assert.assertTrue(currentDispay);
+        }
+
+        if (nameTrigger.equals("class")) {
+//            System.out.println(nameTrigger + " = " +valueTrigger);
+            Boolean currentDispay = mdCheckDisplay.findByClass(valueTrigger);
+            Assert.assertTrue(currentDispay);
+        }
+
+        if (nameTrigger.equals("xpath")) {
+//            System.out.println(nameTrigger + " = " +valueTrigger);
+            Boolean currentDispay = mdCheckDisplay.findByXPath(valueTrigger);
             Assert.assertTrue(currentDispay);
         }
     }

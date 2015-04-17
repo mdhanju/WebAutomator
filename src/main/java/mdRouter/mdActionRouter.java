@@ -5,10 +5,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import stepHelpers.mdClickElement;
 import stepHelpers.mdInputText;
+import stepHelpers.mdWait;
 
 import java.io.IOException;
 
-import static parser.mdWebComponentParser.getCustomAttFrmWebComp;
+import static parser.mdWebElementParser.getCustomAttFrmWebComp;
 
 /**
  * Created by maninderdhanju on 4/7/15.
@@ -31,9 +32,12 @@ public class mdActionRouter {
             mdClickElement.findByLinkText(valueTrigger);
         } else if (nameTrigger.equals("id")) {
             mdClickElement.clickById(valueTrigger);
+        } else if (nameTrigger.equals("xpath")) {
+            mdClickElement.findByXPath(valueTrigger);
         } else {
             System.out.println("NEED TO BE IMPLEMENTED");
         }
+        mdWait.waitFor(2);
     }
 
     public void inputTextInElement(String name, String action) throws IOException, ParseException {

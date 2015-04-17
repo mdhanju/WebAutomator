@@ -8,7 +8,7 @@
       "type": "input",
       "customAttribute": {
         "name": "id",
-        "value": "Sign in"
+        "value": "Email"
       }
     },
     {

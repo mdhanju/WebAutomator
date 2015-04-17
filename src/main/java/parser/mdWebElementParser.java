@@ -5,14 +5,13 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 /**
  * Created by maninderdhanju on 4/8/15.
  */
-public class mdWebComponentParser {
+public class mdWebElementParser {
 
 //    public static void main(String[] args) throws IOException, ParseException {
 //        String dataa = getPageTitle("i_am_on_gmailPage");
@@ -32,7 +31,7 @@ public class mdWebComponentParser {
 
     public static String getUrl(String data) throws IOException, ParseException {
         String launchUrl = null;
-        String path = "webComponents/" + data + ".json";
+        String path = "webElements/" + data + ".json";
         FileReader reader = new FileReader(path);
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
@@ -42,7 +41,7 @@ public class mdWebComponentParser {
 
     public static JSONObject getCustomAttFrmWebComp(String fileName, String eleName) throws IOException, ParseException {
         JSONObject result = null;
-        String path = "webComponents/" + fileName + ".json";
+        String path = "webElements/" + fileName + ".json";
 
         FileReader reader = new FileReader(path);
         JSONParser jsonParser = new JSONParser();
@@ -60,7 +59,7 @@ public class mdWebComponentParser {
         String pageTitle = null;
         String[] myArray = data.split("_");
         String nameFile = myArray[myArray.length - 1];
-        String path = "webComponents/" + nameFile + ".json";
+        String path = "webElements/" + nameFile + ".json";
         FileReader reader = new FileReader(path);
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
