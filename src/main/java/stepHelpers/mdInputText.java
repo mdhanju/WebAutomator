@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 public class mdInputText {
 
     public static void inputById(String key, String value) {
-        System.out.println("key = " + key + " value = " + value);
         mdBrowserHelper.driver.findElement(By.id(key)).sendKeys(value);
     }
 
