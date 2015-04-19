@@ -16,4 +16,7 @@ public class mdInputText {
         mdBrowserHelper.driver.findElement(By.className(key)).sendKeys(value);
     }
 
+    public static void inputByXPath(String key, String value) {
+        mdBrowserHelper.driver.findElement(By.xpath(key)).sendKeys(value);
+    }
 }

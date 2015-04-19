@@ -43,28 +43,15 @@ public class mdAssertRouter {
         String nameTrigger = (String) dataa.get("name");
         String valueTrigger = (String) dataa.get("value");
 //        System.out.println("Element Attributes--> " + nameTrigger + " : " + valueTrigger);
-        if (nameTrigger.equals("linkText")) {
-//            System.out.println(nameTrigger + " = " +valueTrigger);
-            Boolean currentDispay = mdCheckDisplay.findByLinkText(valueTrigger);
-            Assert.assertTrue(currentDispay);
-        }
-        if (nameTrigger.equals("id")) {
-//            System.out.println(nameTrigger + " = " +valueTrigger);
-            Boolean currentDispay = mdCheckDisplay.findById(valueTrigger);
-            System.out.println("currentDispay = " + currentDispay);
-            Assert.assertTrue(currentDispay);
-        }
 
-        if (nameTrigger.equals("class")) {
-//            System.out.println(nameTrigger + " = " +valueTrigger);
-            Boolean currentDispay = mdCheckDisplay.findByClass(valueTrigger);
-            Assert.assertTrue(currentDispay);
-        }
+        Boolean currentDispay = null;
 
-        if (nameTrigger.equals("xpath")) {
-//            System.out.println(nameTrigger + " = " +valueTrigger);
-            Boolean currentDispay = mdCheckDisplay.findByXPath(valueTrigger);
-            Assert.assertTrue(currentDispay);
-        }
+        if (nameTrigger.equals("id")) currentDispay = mdCheckDisplay.findById(valueTrigger);
+        else if (nameTrigger.equals("class")) currentDispay = mdCheckDisplay.findByClass(valueTrigger);
+        else if (nameTrigger.equals("linkText")) currentDispay = mdCheckDisplay.findByLinkText(valueTrigger);
+        else if (nameTrigger.equals("xpath")) currentDispay = mdCheckDisplay.findByXPath(valueTrigger);
+
+        Assert.assertTrue(currentDispay);
+
     }
 }
