@@ -1,0 +1,87 @@
+{
+  "name": "googleSearchPage",
+  "url": "http://www.google.com",
+  "title": "Google",
+  "elements": [
+    {
+      "name": "youLink",
+      "type": "a",
+      "customAttribute": {
+        "name": "linkText",
+        "value": "+You"
+      }
+    },
+    {
+      "name": "gmailLink",
+      "type": "a",
+      "customAttribute": {
+        "name": "linkText",
+        "value": "Gmail"
+      }
+    },
+    {
+      "name": "imagesLink",
+      "type": "a",
+      "customAttribute": {
+        "name": "linkText",
+        "value": "Images"
+      }
+    },
+    {
+      "name": "appsSign",
+      "type": "a",
+      "customAttribute": {
+        "name": "href",
+        "value": "http://www.google.com/intl/en/options/"
+      }
+    },
+    {
+      "name": "signInButton",
+      "type": "a",
+      "customAttribute": {
+        "name": "linkText",
+        "value": "Sign in"
+      }
+    },
+    {
+      "name": "searchImage",
+      "type": "img",
+      "customAttribute": {
+        "name": "id",
+        "value": "hplogo"
+      }
+    },
+    {
+      "name": "searchBox",
+      "type": "input",
+      "customAttribute": {
+        "name": "id",
+        "value": "lst-ib"
+      }
+    },
+    {
+      "name": "mikeIcon",
+      "type": "input",
+      "customAttribute": {
+        "name": "id",
+        "value": "gsri_ok0"
+      }
+    },
+    {
+      "name": "buttonGoogleSearch",
+      "type": "input",
+      "customAttribute": {
+        "name": "aria-label",
+        "value": "Google Search"
+      }
+    },
+    {
+      "name": "imFeelingLuckyButton",
+      "type": "input",
+      "customAttribute": {
+        "name": "aria-label",
+        "value": "I'm Feeling Lucky"
+      }
+    }
+  ]
+}

@@ -4,6 +4,14 @@
 #TODO Parallel Exection 
 #Usage 
 
-mvn clean
-mvn install
-mvn test
+Clean maven repo
+
+run "mvn clean" 
+
+Download dependicies form maven repo
+
+run "mvn install"
+
+Run maven test
+
+run "mvn test"
