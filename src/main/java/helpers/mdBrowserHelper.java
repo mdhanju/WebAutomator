@@ -19,6 +19,7 @@ import java.io.IOException;
 public class mdBrowserHelper {
     public static WebDriver driver;
     public static String fileName;
+    public static String dataFileName;
     public static String myUrl;
 
     String myBrowser = mdConfigParser.getBrowser();
@@ -27,10 +28,13 @@ public class mdBrowserHelper {
     public void before(Scenario scenario) throws IOException, ParseException {
         String scenarioName = scenario.getName();
         setFileName(scenarioName);
-        System.out.println("Scenario Name = " + scenarioName);
+        setDataFileName(scenarioName);
+        System.out.println("SCENARIO NAME --> " + scenarioName);
+        System.out.println("DATA FILE NAME --> " + dataFileName);
         fileName = mdWebElementParser.getNameOfWebComp(scenarioName);
         myUrl = mdWebElementParser.getUrl(fileName);
-        System.out.println("**** Launching Browser ****");
+        System.out.println("**** LAUNCHING " + myBrowser.toUpperCase() + " BROWSER ****");
+        System.out.println("URL --> " + myUrl);
         setDriver(myBrowser, myUrl);
     }
 
@@ -41,8 +45,6 @@ public class mdBrowserHelper {
     }
 
     public void setDriver(String myBrowser, String myUrl) {
-        System.out.println("BROWSER = " + myBrowser.toUpperCase());
-        System.out.println("URL = " + myUrl);
         if (myBrowser.equals("chrome")) {
             driver = new ChromeDriver();
         } else if (myBrowser.equals("firefox")) {
@@ -66,6 +68,19 @@ public class mdBrowserHelper {
 
     public static void setFileName(String name) {
         fileName = name;
+    }
+
+
+    public static String getDataFileName() {
+        return dataFileName;
+    }
+
+    public static void setDataFileName(String name) {
+        String[] myArray = name.split(" ");
+        for (int i = 0; i < myArray.length; i++) {
+            if (i == 0) dataFileName = myArray[i].substring(0, 1).toLowerCase() + myArray[i].substring(1);
+            else dataFileName = dataFileName + myArray[i].substring(0, 1).toUpperCase() + myArray[i].substring(1);
+        }
     }
 
 }

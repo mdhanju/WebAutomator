@@ -9,6 +9,9 @@
       "customAttribute": {
         "name": "id",
         "value": "Email"
+      },
+      "data": {
+        "value": "yourusername1357"
       }
     },
     {
@@ -17,6 +20,9 @@
       "customAttribute": {
         "name": "id",
         "value": "Passwd"
+      },
+      "data": {
+        "value": "my_password"
       }
     },
     {
