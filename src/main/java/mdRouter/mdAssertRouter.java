@@ -28,10 +28,10 @@ public class mdAssertRouter {
         mdBrowserHelper myhelper;
         myhelper = new mdBrowserHelper();
         String pageTitleWeb = myhelper.getPageTitle();
-//        System.out.println("Page title Web = " + pageTitleWeb);
-//        System.out.println("Page Title Data = " + pageTitleData);
+        System.out.println("Page title Web = " + pageTitleWeb);
+        System.out.println("Page Title Data = " + pageTitleData);
 
-        if ((pageTitleWeb.contains(pageTitleData)) && (pageTitleData != null) && (pageTitleData.length() > 1))
+        if ((pageTitleWeb.contains(pageTitleData)) && (pageTitleData.length() > 1))
             res = true;
         Assert.assertTrue(res);
     }
