@@ -3,6 +3,5 @@
     "chrome",
     "firefox"
   ],
-  "browser": ["chrome"],
-  "url": "http://www.google.com"
+  "browser": ["firefox"]
 }

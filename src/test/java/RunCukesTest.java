@@ -9,13 +9,14 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/features/",
-        //glue = "com.sample",
+        glue = {"steps",
+                "helpers"},
         //tags = { "~@wip", "@executeThis" },
         monochrome = true,
         format = {
                 "pretty",
                 "html:target/cucumber",
-                "json:target_json/result.json"
+                "json:target/json/result.json"
         }
 )
 public class RunCukesTest {
