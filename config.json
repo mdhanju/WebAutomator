@@ -3,5 +3,5 @@
     "chrome",
     "firefox"
   ],
-  "browser": ["firefox"]
+  "browser": ["chrome"]
 }
