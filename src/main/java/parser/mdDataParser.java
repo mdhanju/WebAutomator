@@ -13,14 +13,6 @@ import java.io.IOException;
  */
 
 public class mdDataParser {
-    static String path = "config.json";
-
-    public static void main(String[] args) throws IOException, ParseException {
-        String namme = getPageTitle("userId");
-        System.out.println("NMAE = " + namme);
-
-
-    }
 
     public static String getPageTitle(String key) throws IOException, ParseException {
         String name = mdBrowserHelper.getDataFileName();

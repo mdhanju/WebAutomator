@@ -29,12 +29,13 @@ public class mdBrowserHelper {
         String scenarioName = scenario.getName();
         setFileName(scenarioName);
         setDataFileName(scenarioName);
-        System.out.println("SCENARIO NAME --> " + scenarioName);
-        System.out.println("DATA FILE NAME --> " + dataFileName);
         fileName = mdWebElementParser.getNameOfWebComp(scenarioName);
         myUrl = mdWebElementParser.getUrl(fileName);
+        System.out.println("SCENARIO NAME     --> " + scenarioName);
+        System.out.println("DATA FILE NAME    --> " + dataFileName);
+        System.out.println("URL               --> " + myUrl);
+        System.out.println("DEFAULT WAIT TIME --> " + mdConfigParser.getwaitTime());
         System.out.println("**** LAUNCHING " + myBrowser.toUpperCase() + " BROWSER ****");
-        System.out.println("URL --> " + myUrl);
         setDriver(myBrowser, myUrl);
     }
 

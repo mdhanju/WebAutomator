@@ -24,15 +24,13 @@ public class mdAssertRouter {
     public void assertPages(String pageTitle) throws IOException, ParseException {
         String pageTitleData = mdWebElementParser.getPageTitle(pageTitle);
 
-        Boolean res = null;
+        Boolean res = false;
         mdBrowserHelper myhelper;
         myhelper = new mdBrowserHelper();
         String pageTitleWeb = myhelper.getPageTitle();
-        System.out.println("Page title Web = " + pageTitleWeb);
-        System.out.println("Page Title Data = " + pageTitleData);
-
-        if ((pageTitleWeb.contains(pageTitleData)) && (pageTitleData.length() > 1))
-            res = true;
+//        System.out.println("Page title Web = " + pageTitleWeb);
+//        System.out.println("Page Title Data = " + pageTitleData);
+        if ((pageTitleWeb.contains(pageTitleData)) && (pageTitleData.length() > 1)) res = true;
         Assert.assertTrue(res);
     }
 
@@ -44,14 +42,11 @@ public class mdAssertRouter {
         String valueTrigger = (String) dataa.get("value");
 //        System.out.println("Element Attributes--> " + nameTrigger + " : " + valueTrigger);
 
-        Boolean currentDispay = null;
-
+        Boolean currentDispay = false;
         if (nameTrigger.equals("id")) currentDispay = mdCheckDisplay.findById(valueTrigger);
         else if (nameTrigger.equals("class")) currentDispay = mdCheckDisplay.findByClass(valueTrigger);
         else if (nameTrigger.equals("linkText")) currentDispay = mdCheckDisplay.findByLinkText(valueTrigger);
         else if (nameTrigger.equals("xpath")) currentDispay = mdCheckDisplay.findByXPath(valueTrigger);
-
         Assert.assertTrue(currentDispay);
-
     }
 }

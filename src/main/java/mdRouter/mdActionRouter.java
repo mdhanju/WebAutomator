@@ -6,6 +6,7 @@ import org.json.simple.parser.ParseException;
 import parser.mdDataParser;
 import stepHelpers.mdClickElement;
 import stepHelpers.mdInputText;
+import stepHelpers.mdWait;
 
 import java.io.IOException;
 
@@ -33,7 +34,7 @@ public class mdActionRouter {
         else if (nameTrigger.equals("xpath")) mdClickElement.findByXPath(valueTrigger);
         else if (nameTrigger.equals("linkText")) mdClickElement.findByLinkText(valueTrigger);
         else System.out.println("NEED TO BE IMPLEMENTED");
-//        mdWait.waitFor(2);
+        mdWait.waitFor();
     }
 
     public void inputTextInElement(String name, String value) throws IOException, ParseException {
@@ -48,6 +49,6 @@ public class mdActionRouter {
         else if (nameTrigger.equals("class")) mdInputText.inputByClass(valueTrigger, dataInput);
         else if (nameTrigger.equals("xpath")) mdInputText.inputByXPath(valueTrigger, dataInput);
         else System.out.println("NEED TO BE IMPLEMENTED");
-//        mdWait.waitFor(2);
+        mdWait.waitFor();
     }
 }
