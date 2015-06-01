@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/features/",
+        features = "src/test/features/yahooPage.feature",
         glue = {"steps",
                 "helpers"},
         //gmailLogIn.feature

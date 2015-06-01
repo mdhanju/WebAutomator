@@ -10,4 +10,3 @@ Feature: Yahoo page
       | text        |
       | searchText  |
       | searchText1 |
-      | searchText2 |

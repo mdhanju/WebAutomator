@@ -7,6 +7,11 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.safari.SafariDriver;
 import parser.mdConfigParser;
 import parser.mdWebElementParser;
 
@@ -46,15 +51,34 @@ public class mdBrowserHelper {
     }
 
     public void setDriver(String myBrowser, String myUrl) {
+
         if (myBrowser.equals("chrome")) {
             driver = new ChromeDriver();
+
         } else if (myBrowser.equals("firefox")) {
             driver = new FirefoxDriver();
+
+        } else if (myBrowser.equals("ie")) {
+            driver = new InternetExplorerDriver();
+
+        } else if (myBrowser.equals("safari")) {
+            driver = new SafariDriver();
+
+        } else if (myBrowser.equals("phantom")) {
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "driver/phantomjs");
+            driver = new PhantomJSDriver(caps);
+
         } else {
             driver = new ChromeDriver();
+
         }
+
 //        driver.manage().window().maximize();
         driver.get(myUrl);
+
+
+
     }
 
     public String getPageTitle() {

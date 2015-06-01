@@ -1,7 +1,10 @@
 {
   "allowedBrowsers": [
     "chrome",
-    "firefox"
+    "firefox",
+    "phantom",
+    "safari",
+    "ie"
   ],
   "browser": ["chrome"],
   "waitTime": "1"
